@@ -2,17 +2,14 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++: g++ build active file",
-            "command": "/usr/bin/g++",
+            "label": "C/C++: build Chess project",
+            "command": "/bin/bash",
             "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "-lc",
+                "/usr/bin/g++ -fdiagnostics-color=always -g $(find \"${workspaceFolder}/Chess\" -type f \\( -name '*.cpp' -o -name '*.cc' -o -name '*.cxx' \\)) -o \"${workspaceFolder}/Chess/chess\""
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${workspaceFolder}"
             },
             "problemMatcher": [
                 "$gcc"
